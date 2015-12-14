@@ -29,28 +29,25 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
     // Learn more here: https://github.com/angular-ui/ui-router
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
-    $stateProvider
-        
-        .state('cliente', {
-            url: '/cliente',
-            views: {
-                'cliente': {
-                    templateUrl: 'templates/cliente-prueba.html',
-                    controller: 'InicioCtrl'
-                }
+    $stateProvider.state('cliente', {
+        url: '/cliente',
+        views: {
+            'cliente': {
+                templateUrl: 'templates/cliente-prueba.html'
             }
-        })
+        }
+    })
 
-        // setup an abstract state for the tabs directive
-        .state('tab', {
-            url: '/tab',
-            abstract: true,
-            templateUrl: 'templates/tabs.html'
-        })
+    // setup an abstract state for the tabs directive
+    $stateProvider.state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html'
+    })
 
     // Each tab has its own nav history stack:
 
-    .state('tab.inicio', {
+    $stateProvider.state('tab.inicio', {
         url: '/inicio',
         views: {
             'tab-inicio': {
@@ -60,53 +57,66 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
         }
     })
 
-    //
+    $stateProvider.state('tab.clientes', {
+        url: '/clientes',
+        views: {
+            'tab-clientes': {
+                templateUrl: 'templates/tab-clientes.html',
+                controller: 'InicioCtrl'
+            }
+        }
+    })
 
-    .state('tab.clientes', {
-            url: '/clientes',
-            views: {
-                'tab-clientes': {
-                    templateUrl: 'templates/tab-clientes.html',
-                    controller: 'InicioCtrl'
-                }
+    
+    $stateProvider.state('tab.cliente', {
+        url: '/cliente/:codclien',
+        views: {
+            'tab-clientes': {
+                templateUrl: 'templates/cliente-detalle.html',
+                controller: 'InicioCtrl'
             }
-        })
-        .state('tab.proveedores', {
-            url: '/proveedores',
-            views: {
-                'tab-proveedores': {
-                    templateUrl: 'templates/tab-proveedores.html',
-                    controller: 'InicioCtrl'
-                }
+        }
+    });
+
+    $stateProvider.state('tab.proveedores', {
+        url: '/proveedores',
+        views: {
+            'tab-proveedores': {
+                templateUrl: 'templates/tab-proveedores.html',
+                controller: 'InicioCtrl'
             }
-        })
-        .state('tab.articulos', {
-            url: '/articulos',
-            views: {
-                'tab-articulos': {
-                    templateUrl: 'templates/tab-articulos.html',
-                    controller: 'InicioCtrl'
-                }
+        }
+    })
+
+    $stateProvider.state('tab.articulos', {
+        url: '/articulos',
+        views: {
+            'tab-articulos': {
+                templateUrl: 'templates/tab-articulos.html',
+                controller: 'InicioCtrl'
             }
-        })
-        .state('tab.pedidos', {
-            url: '/pedidos',
-            views: {
-                'tab-pedidos': {
-                    templateUrl: 'templates/tab-pedidos.html',
-                    controller: 'InicioCtrl'
-                }
+        }
+    })
+
+    $stateProvider.state('tab.pedidos', {
+        url: '/pedidos',
+        views: {
+            'tab-pedidos': {
+                templateUrl: 'templates/tab-pedidos.html',
+                controller: 'InicioCtrl'
             }
-        })
-        .state('tab.cobros', {
-            url: '/cobros',
-            views: {
-                'tab-cobros': {
-                    templateUrl: 'templates/tab-cobros.html',
-                    controller: 'InicioCtrl'
-                }
+        }
+    })
+
+    $stateProvider.state('tab.cobros', {
+        url: '/cobros',
+        views: {
+            'tab-cobros': {
+                templateUrl: 'templates/tab-cobros.html',
+                controller: 'InicioCtrl'
             }
-        });
+        }
+    });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/inicio');
