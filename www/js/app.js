@@ -29,14 +29,6 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
     // Learn more here: https://github.com/angular-ui/ui-router
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
-    $stateProvider.state('cliente', {
-        url: '/cliente',
-        views: {
-            'cliente': {
-                templateUrl: 'templates/cliente-prueba.html'
-            }
-        }
-    })
 
     // setup an abstract state for the tabs directive
     $stateProvider.state('tab', {
@@ -67,7 +59,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
         }
     })
 
-    
+
     $stateProvider.state('tab.cliente', {
         url: '/cliente/:codclien',
         views: {
@@ -117,6 +109,83 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
             }
         }
     });
+
+    // rutas relacionadas con cliente
+    $stateProvider.state('cli', {
+        url: '/cli',
+        abstract: true,
+        templateUrl: 'templates/cliente-detalle.html'
+    })
+
+    $stateProvider.state('cli.contacto', {
+        url: '/contacto',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-contacto.html'
+            }
+        }
+    })
+
+    $stateProvider.state('cli.ofertas', {
+        url: '/ofertas',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-ofertas.html'
+            }
+        }
+    })
+
+    $stateProvider.state('cli.pedidos', {
+        url: '/pedidos',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-pedidos.html'
+            }
+        }
+    })
+
+    $stateProvider.state('cli.albaranes', {
+        url: '/albaranes',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-albaranes.html'
+            }
+        }
+    })
+    $stateProvider.state('cli.facturas', {
+        url: '/facturas',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-facturas.html'
+            }
+        }
+    })
+    $stateProvider.state('cli.precios', {
+        url: '/precios',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-precios.html'
+            }
+        }
+    })
+
+    $stateProvider.state('cli.preciosEspeciales', {
+        url: '/preciosEspeciales',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-preciosEspeciales.html'
+            }
+        }
+    })
+    
+    $stateProvider.state('cli.descuentos', {
+        url: '/descuentos',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-descuentos.html'
+            }
+        }
+    })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/inicio');
