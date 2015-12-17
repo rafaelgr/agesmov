@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'agesmov.services' is found in services.js
 // 'agesmov.controllers' is found in controllers.js
-angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
+angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services','chart.js'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -64,7 +64,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
         url: '/cliente/:codclien',
         views: {
             'tab-clientes': {
-                templateUrl: 'templates/cliente-detalle.html',
+                templateUrl: 'templates/cli-menu.html',
                 controller: 'InicioCtrl'
             }
         }
@@ -114,7 +114,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
     $stateProvider.state('cli', {
         url: '/cli',
         abstract: true,
-        templateUrl: 'templates/cliente-detalle.html'
+        templateUrl: 'templates/cli-menu.html'
     })
 
     $stateProvider.state('cli.contacto', {
@@ -177,12 +177,22 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services'])
             }
         }
     })
-    
+
     $stateProvider.state('cli.descuentos', {
         url: '/descuentos',
         views: {
             'menuContent': {
                 templateUrl: 'templates/cli-descuentos.html'
+            }
+        }
+    })
+
+    $stateProvider.state('cli.datos', {
+        url: '/datos',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-datos.html',
+                controller: 'CliDatosCtrl'
             }
         }
     })
