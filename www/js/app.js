@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'agesmov.services' is found in services.js
 // 'agesmov.controllers' is found in controllers.js
-angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services','chart.js'])
+angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','chart.js'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -54,7 +54,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services','c
         views: {
             'tab-clientes': {
                 templateUrl: 'templates/tab-clientes.html',
-                controller: 'InicioCtrl'
+                controller: 'TabClientesCtrl'
             }
         }
     })
@@ -75,7 +75,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services','c
         views: {
             'tab-proveedores': {
                 templateUrl: 'templates/tab-proveedores.html',
-                controller: 'InicioCtrl'
+                controller: 'TabProveedoresCtrl'
             }
         }
     })

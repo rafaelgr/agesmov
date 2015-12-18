@@ -1,6 +1,22 @@
-angular.module('asgesmov.services', [])
+var app = angular.module('agesmov');
 
-.factory('Loader', ['$ionicLoading', '$timeout', function($ionicLoading, $timeout) {
+app.factory('UxUserFactory', [function(){
+    var userLogged = false;
+    var UserApi = {
+        isUserLogged: function(){
+            return this.userLogged;
+        },
+        login: function(login, password){
+            this.userLogged = true;
+        },
+        logout: function(){
+            this.userLogged = false;
+        }
+    };
+    return UserApi;
+}])
+
+app.factory('Loader', ['$ionicLoading', '$timeout', function($ionicLoading, $timeout) {
 
     var LOADERAPI = {
 
@@ -29,7 +45,7 @@ angular.module('asgesmov.services', [])
     return LOADERAPI;
 }])
 
-.factory('LSFactory', [function() {
+app.factory('LSFactory', [function() {
 
     var LSAPI = {
 

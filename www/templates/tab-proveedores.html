@@ -3,7 +3,37 @@
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
-  <ion-content>
-  Necesita zona de búsqueda y de resultados (lista)
-  </ion-content>
+    <ion-content>
+        <ion-list ng-hide="conResultados">
+            <div class="item item-divider item-calm">
+                <i class="icon ion-search"></i> Búsqueda de proveedores
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Nombre del proveedor...">
+            </label>
+            <div class="item item-body">
+                <div class="text-center">
+                    <button class="button" ng-click="buscar()">
+                        <i class="icon ion-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+        </ion-list>
+        <ion-list ng-show="conResultados">
+            <ion-item class="item-calm item-button-right" ng-click="desBuscar()">
+                <i class="icon ion-funnel"></i> Resultados
+                <button class="button button-calm">
+                    <i class="icon ion-search"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-text-wrap" href="#">
+                <h4> CIF: 8978899 </h4>
+                <p>Bodega de la montaña</p>
+            </ion-item>
+            <ion-item class="item-text-wrap" href="#">
+                <h4> CIF: A7898855 </h4>
+                <p>Bodega del Valle</p>
+            </ion-item>
+            <ion-list>
+    </ion-content>
 </ion-view>
