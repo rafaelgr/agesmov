@@ -1,8 +1,9 @@
 /* Empty. Add your own CSS if you like */
-.aswOk {
-	background-color: LightBlue!important;
+.scroll {
+    height: 100%;
 }
-
-.aswNOk{
-	background-color: LightCoral!important;	
+ 
+#map {
+    width: 100%;
+    height: 100%;
 }

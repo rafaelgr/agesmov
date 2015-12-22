@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'agesmov.services' is found in services.js
 // 'agesmov.controllers' is found in controllers.js
-angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','chart.js'])
+angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', 'chart.js', 'ngCordova'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -121,7 +121,8 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
         url: '/contacto',
         views: {
             'menuContent': {
-                templateUrl: 'templates/cli-contacto.html'
+                templateUrl: 'templates/cli-contacto.html',
+                controller: 'CliContactoCtrl'
             }
         }
     })
@@ -131,6 +132,15 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
         views: {
             'menuContent': {
                 templateUrl: 'templates/cli-ofertas.html'
+            }
+        }
+    })
+    
+    $stateProvider.state('cli.ofertasDetalle', {
+        url: '/ofertasDetalle',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-ofertas-detalle.html'
             }
         }
     })
@@ -144,6 +154,15 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
         }
     })
 
+    $stateProvider.state('cli.pedidosDetalle', {
+        url: '/pedidosDetalle',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-pedidos-detalle.html'
+            }
+        }
+    })
+
     $stateProvider.state('cli.albaranes', {
         url: '/albaranes',
         views: {
@@ -152,6 +171,16 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
             }
         }
     })
+
+    $stateProvider.state('cli.albaranesDetalle', {
+        url: '/albaranesDetalle',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-albaranes-detalle.html'
+            }
+        }
+    })
+
     $stateProvider.state('cli.facturas', {
         url: '/facturas',
         views: {
@@ -160,6 +189,16 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
             }
         }
     })
+
+    $stateProvider.state('cli.facturasDetalle', {
+        url: '/facturasDetalle',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cli-facturas-detalle.html'
+            }
+        }
+    })
+
     $stateProvider.state('cli.precios', {
         url: '/precios',
         views: {
@@ -196,6 +235,13 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers','agesmov.services','ch
             }
         }
     })
+
+    $stateProvider
+        .state('map', {
+            url: '/map',
+            templateUrl: 'templates/map.html',
+            controller: 'MapCtrl'
+        });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/inicio');

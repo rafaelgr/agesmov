@@ -53,3 +53,9 @@ app.controller('TabProveedoresCtrl', function($scope) {
         $scope.conResultados = false;
     };
 })
+
+app.controller('CliContactoCtrl', function($scope, $state) {
+    $scope.verMapa = function(){
+        $state.go('map');
+    };
+})
