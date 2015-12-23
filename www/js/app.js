@@ -203,7 +203,8 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
         url: '/precios',
         views: {
             'menuContent': {
-                templateUrl: 'templates/cli-precios.html'
+                templateUrl: 'templates/cli-precios.html',
+                controller: 'CliPreciosCtrl'
             }
         }
     })

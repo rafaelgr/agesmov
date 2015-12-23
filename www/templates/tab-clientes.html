@@ -5,7 +5,7 @@
     </ion-nav-bar>
     <ion-content>
         <ion-list  ng-hide="conResultados">
-            <div class="item item-divider item-calm">
+            <div class="item item-divider item-positive">
                 <i class="icon ion-search"></i> Búsqueda de clientes
             </div>
             <label class="item item-input">
@@ -20,21 +20,24 @@
             </div>
         </ion-list>
         <ion-list ng-show="conResultados">
-            <ion-item class="item-calm item-button-right" ng-click="desBuscar()">
+            <ion-item class="item-positive item-button-right" ng-click="desBuscar()">
                 <i class="icon ion-funnel"></i> Resultados
-                <button class="button button-calm">
+                <button class="button button-positive">
                     <i class="icon ion-search"></i>
                 </button>
             </ion-item>
-            <ion-item class="item-text-wrap" href="#/cli/datos">
+            <ion-item class="item-text-wrap item-icon-right" href="#/cli/datos">
+            <i class="icon ion-chevron-right"></i>
                 <h4> CIF: X789966 </h4>
                 <p>Gary Host</p>
             </ion-item>
-            <ion-item class="item-text-wrap" href="#/cli/datos">
+            <ion-item class="item-text-wrap item-icon-right" href="#/cli/datos">
+            <i class="icon ion-chevron-right"></i>
                 <h4> CIF: 5389988G </h4>
                 <p>Restaurante el campo</p>
             </ion-item>
-            <ion-item class="item-text-wrap" href="#/cli/datos">
+            <ion-item class="item-text-wrap item-icon-right" href="#/cli/datos">
+            <i class="icon ion-chevron-right"></i>
                 <h4> CIF: A458788555 </h4>
                 <p>Bodas y Comuniones La Buena Fiesta Gitana</p>
             </ion-item>

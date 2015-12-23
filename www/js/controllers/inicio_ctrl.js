@@ -59,3 +59,15 @@ app.controller('CliContactoCtrl', function($scope, $state) {
         $state.go('map');
     };
 })
+
+app.controller('CliPreciosCtrl', function($scope) {
+    $scope.conResultados = false;
+
+    $scope.buscar = function() {
+        $scope.conResultados = true;
+    };
+
+    $scope.desBuscar = function() {
+        $scope.conResultados = false;
+    };
+})
