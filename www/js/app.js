@@ -135,7 +135,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
             }
         }
     })
-    
+
     $stateProvider.state('cli.ofertasDetalle', {
         url: '/ofertasDetalle',
         views: {
@@ -242,8 +242,34 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
             url: '/map',
             templateUrl: 'templates/map.html',
             controller: 'MapCtrl'
-        });
+        })
 
+    // rutas relacionadas con cliente
+    $stateProvider.state('pro', {
+        url: '/pro',
+        abstract: true,
+        templateUrl: 'templates/pro-menu.html'
+    })
+
+
+    $stateProvider.state('pro.contacto', {
+        url: '/proContacto',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/pro-contacto.html',
+                controller: 'CliContactoCtrl'
+            }
+        }
+    })
+    
+    $stateProvider.state('pro.descuentos', {
+        url: '/proDescuentos',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/pro-descuentos.html'
+            }
+        }
+    })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/inicio');
 
