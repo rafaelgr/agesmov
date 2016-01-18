@@ -54,6 +54,36 @@ app.controller('TabProveedoresCtrl', function($scope) {
     };
 })
 
+app.controller('TabArticulosCtrl', function($scope) {
+    $scope.conResultados = false;
+
+    $scope.buscar = function() {
+        $scope.conResultados = true;
+    };
+
+    $scope.desBuscar = function() {
+        $scope.conResultados = false;
+    };
+})
+
+app.controller('TabPedidosCtrl', ['$scope', '$state', function($scope, $state) {
+    $scope.crearPedido = function(){
+        $state.go('ped.detalle',{'llamada':'crear'});
+    };
+}])
+
+app.controller('TabCobrosCtrl', function($scope) {
+    $scope.conResultados = false;
+
+    $scope.buscar = function() {
+        $scope.conResultados = true;
+    };
+
+    $scope.desBuscar = function() {
+        $scope.conResultados = false;
+    };
+})
+
 app.controller('CliContactoCtrl', function($scope, $state) {
     $scope.verMapa = function(){
         $state.go('map');
@@ -71,3 +101,56 @@ app.controller('CliPreciosCtrl', function($scope) {
         $scope.conResultados = false;
     };
 })
+
+app.controller('PedDetalleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
+    // variables definition
+    $scope.enEdicionCabecera = false;
+    $scope.enEdicionLinea = false;
+
+    if ($stateParams.llamada == 'crear'){
+        $scope.enEdicionCabecera = true;
+    }
+
+    $scope.editarCabecera = function(){
+        $scope.enEdicionCabecera = true;
+    }
+    $scope.guardarCabecera = function(){
+        $scope.enEdicionCabecera = false;
+    }
+    $scope.editarLinea = function(){
+        $scope.enEdicionLinea = true;
+    }
+    $scope.guardarLinea = function(){
+        $scope.enEdicionLinea = false;
+    }
+    // event handlers
+    $scope.$on('$ionicView.enter', function(e) {
+    });
+}])
+
+
+app.controller('CobDetalleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function($rootScope, $scope, $state, $stateParams) {
+    // variables definition
+    $scope.enEdicionCabecera = false;
+    $scope.enEdicionLinea = false;
+
+    if ($stateParams.llamada == 'crear'){
+        $scope.enEdicionCabecera = true;
+    }
+
+    $scope.editarCabecera = function(){
+        $scope.enEdicionCabecera = true;
+    }
+    $scope.guardarCabecera = function(){
+        $scope.enEdicionCabecera = false;
+    }
+    $scope.editarLinea = function(){
+        $scope.enEdicionLinea = true;
+    }
+    $scope.guardarLinea = function(){
+        $scope.enEdicionLinea = false;
+    }
+    // event handlers
+    $scope.$on('$ionicView.enter', function(e) {
+    });
+}])

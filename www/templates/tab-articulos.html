@@ -3,9 +3,63 @@
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
-    <ion-content class="padding">
-        <div>
-            Posibilidad de búsqueda y resultados.
-        </div>
+    <ion-content>
+        <ion-list ng-hide="conResultados">
+            <div class="item item-divider item-positive">
+                <i class="icon ion-search"></i> Búsqueda de artículos
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Nombre del artículo...">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Código...">
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Familia
+                </div>
+                <select>
+                    <option selected></option>
+                    <option>Familia 1</option>
+                    <option>Familia 2</option>
+                </select>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Proveedor
+                </div>
+                <select>
+                    <option selected></option>
+                    <option>Proveedor 1</option>
+                    <option>Proveedor 2</option>
+                </select>
+            </label>
+            <ion-checkbox>Incluir obsoletos</ion-checkbox>
+            <div class="item item-body">
+                <div class="text-center">
+                    <button class="button" ng-click="buscar()">
+                        <i class="icon ion-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+        </ion-list>
+        <ion-list ng-show="conResultados">
+            <ion-item class="item-positive item-button-right" ng-click="desBuscar()">
+                <i class="icon ion-funnel"></i> Resultados
+                <button class="button button-positive">
+                    <i class="icon ion-search"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/art/detalle">
+                <i class="icon ion-chevron-right"></i>
+                <h4>COD: 12336 </h4>
+                <p>Vino cosechero 1950</p>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/art/detalle">
+                <i class="icon ion-chevron-right"></i>
+                <h4>COD: 54788</h4>
+                <p>Serrania de Pons 2l.</p>
+            </ion-item>
+            <ion-list>
     </ion-content>
 </ion-view>

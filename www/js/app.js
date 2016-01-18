@@ -85,7 +85,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
         views: {
             'tab-articulos': {
                 templateUrl: 'templates/tab-articulos.html',
-                controller: 'InicioCtrl'
+                controller: 'TabArticulosCtrl'
             }
         }
     })
@@ -95,7 +95,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
         views: {
             'tab-pedidos': {
                 templateUrl: 'templates/tab-pedidos.html',
-                controller: 'InicioCtrl'
+                controller: 'TabPedidosCtrl'
             }
         }
     })
@@ -105,7 +105,7 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
         views: {
             'tab-cobros': {
                 templateUrl: 'templates/tab-cobros.html',
-                controller: 'InicioCtrl'
+                controller: 'TabCobrosCtrl'
             }
         }
     });
@@ -261,16 +261,68 @@ angular.module('agesmov', ['ionic', 'agesmov.controllers', 'agesmov.services', '
             }
         }
     })
-    
+
     $stateProvider.state('pro.descuentos', {
-        url: '/proDescuentos',
+            url: '/proDescuentos',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/pro-descuentos.html'
+                }
+            }
+        })
+
+    // rutas relacionadas con artículos
+    $stateProvider.state('art', {
+        url: '/art',
+        abstract: true,
+        templateUrl: 'templates/art-menu.html'
+    })
+
+    $stateProvider.state('art.detalle', {
+        url: '/detalle',
         views: {
             'menuContent': {
-                templateUrl: 'templates/pro-descuentos.html'
+                templateUrl: 'templates/art-detalle.html'
             }
         }
     })
-    // if none of the above states are matched, use this as the fallback
+
+    // rutas relacionadas con pedidos
+    $stateProvider.state('ped', {
+        url: '/ped',
+        abstract: true,
+        templateUrl: 'templates/ped-menu.html'
+    })
+
+    $stateProvider.state('ped.detalle', {
+        url: '/detalle/:llamada',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/ped-detalle.html',
+                controller: 'PedDetalleCtrl'
+            }
+        }
+    })
+
+    // rutas relacionadas con cobros
+    $stateProvider.state('cob', {
+        url: '/cob',
+        abstract: true,
+        templateUrl: 'templates/cob-menu.html'
+    })
+
+    $stateProvider.state('cob.detalle', {
+        url: '/detalle/:llamada/:cliente',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/cob-detalle.html',
+                controller: 'CobDetalleCtrl'
+            }
+        }
+    })
+
+
+        // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/inicio');
 
 });

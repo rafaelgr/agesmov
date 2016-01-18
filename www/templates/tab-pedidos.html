@@ -3,9 +3,45 @@
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="crearPedido()">
+            Nuevo pedido <i class="icon ion-plus"></i>
+        </button>
+    </ion-nav-buttons>
     <ion-content class="padding">
-      <div>
-        Posibilidad de búsqueda y resultados.
-      </div>
+        <ion-list>
+            <ion-item class="item-divider item-positive item-text-wrap">
+                <div>
+                    <strong>AGENTE: </strong> Pedro Velázquez
+                    <strong>CLIENTE: </strong> Juan Murillo
+                </div>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/ped/detalle/ver">
+                <i class="icon ion-chevron-right"></i>
+                <div>
+                    <strong>N.Pedido: </strong> 145587
+                    <strong>Fecha: </strong> 26/04/2015
+                </div>
+                <div>
+                    <strong>Total: </strong> 1.256,33 €
+                </div>
+            </ion-item>
+            <ion-item class="item-divider item-positive item-text-wrap">
+                <div>
+                    <strong>AGENTE: </strong> Pedro Velázquez
+                    <strong>CLIENTE: </strong> Maria del Castillo
+                </div>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/ped/detalle/ver">
+                <i class="icon ion-chevron-right"></i>
+                <div>
+                    <strong>N.Pedido: </strong> 897888
+                    <strong>Fecha: </strong> 26/01/2016
+                </div>
+                <div>
+                    <strong>Total: </strong> 192,33 €
+                </div>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

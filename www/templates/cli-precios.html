@@ -1,0 +1,56 @@
+<ion-view view-title="Bodas y Comuniones La Buena Fiesta Gitana">
+    <ion-nav-buttons side="right">
+        <a class="button" href="#/tab/clientes">
+            <i class="icon ion-log-out"></i> Clientes
+        </a>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-list ng-hide="conResultados">
+            <div class="item item-divider item-positive">
+                <i class="icon ion-search"></i> (Precios) Buscar artículo
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Nombre del artículo..">
+            </label>
+            <div class="item item-body">
+                <div class="text-center">
+                    <button class="button" ng-click="buscar()">
+                        <i class="icon ion-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+        </ion-list>
+        <ion-list ng-show="conResultados">
+            <ion-item class="item-positive item-button-right" ng-click="desBuscar()">
+                <i class="icon ion-funnel"></i> (Precios) Resultados
+                <button class="button button-positive">
+                    <i class="icon ion-search"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <div> Tuercas de peso variable </div>
+                <div>
+                    <strong>Precio:</strong> 26,64
+                    <strong>Dto1 (%):</strong> 0
+                    <strong>Dto2 (%):</strong> 0
+                    <strong>Importe:</strong> 26,64
+                </div>
+                <div>
+                    <strong>Stock:</strong> 14
+                </div>
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <div> Gomina capitán pirata </div>
+                <div>
+                    <strong>Precio:</strong> 100
+                    <strong>Dto1 (%):</strong> 10
+                    <strong>Dto2 (%):</strong> 0
+                    <strong>Importe:</strong> 90
+                </div>
+                <div>
+                    <strong>Stock:</strong> 14
+                </div>
+            </ion-item>
+            <ion-list>
+    </ion-content>
+</ion-view>

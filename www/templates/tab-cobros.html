@@ -3,9 +3,44 @@
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
-    <ion-content class="padding">
-      <div>
-        Posibilidad de búsqueda y resultados.
-      </div>
+    <ion-content>
+        <ion-list ng-hide="conResultados">
+            <div class="item item-divider item-positive">
+                <i class="icon ion-search"></i> Cobros del cliente
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Nombre del cliente..">
+            </label>
+            <div class="item item-body">
+                <div class="text-center">
+                    <button class="button" ng-click="buscar()">
+                        <i class="icon ion-search"></i> Buscar
+                    </button>
+                </div>
+            </div>
+        </ion-list>
+        <ion-list ng-show="conResultados">
+            <ion-item class="item-positive item-button-right" ng-click="desBuscar()">
+                <i class="icon ion-funnel"></i> Resultados
+                <button class="button button-positive">
+                    <i class="icon ion-search"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/cob/detalle/ver/0001">
+                <i class="icon ion-chevron-right"></i>
+                <h4> CIF: X789966 </h4>
+                <p>Gary Host</p>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/cob/detalle/ver/0001">
+                <i class="icon ion-chevron-right"></i>
+                <h4> CIF: 5389988G </h4>
+                <p>Restaurante el campo</p>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" href="#/cob/detalle/ver/0001">
+                <i class="icon ion-chevron-right"></i>
+                <h4> CIF: A458788555 </h4>
+                <p>Bodas y Comuniones La Buena Fiesta Gitana</p>
+            </ion-item>
+            <ion-list>
     </ion-content>
 </ion-view>
